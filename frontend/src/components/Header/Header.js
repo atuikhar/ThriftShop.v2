@@ -63,6 +63,7 @@ const Header = () => {
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
+      sx={{ mt: '40px', ml: '10px' }}
     >
       <MenuItem onClick={handleMenuClose}>
         <Link to="/login">
@@ -141,9 +142,10 @@ const Header = () => {
               noWrap
               component="div"
               sx={{
-                color: '#fff',
+                color: '#cbced4',
                 // display: { xs: 'none', sm: 'block' },
-                fontSize: { xs: '20px', sm: '30px', md: '40px', lg: '40px' },
+                fontFamily: 'Poppins, Sans Serif',
+                fontSize: { xs: '20px', sm: '30px', md: '35px', lg: '35px' },
               }}
             >
               ThriftShop
@@ -163,7 +165,9 @@ const Header = () => {
             <IconButton size="large" aria-label="Cart Items" color="inherit">
               <Badge badgeContent={4} color="error">
                 <Link to="/cart">
-                  <ShoppingCartIcon sx={{ fontSize: '30px', color: '#fff' }} />
+                  <ShoppingCartIcon
+                    sx={{ fontSize: '35px', color: '#cbced4' }}
+                  />
                 </Link>
               </Badge>
             </IconButton>
@@ -177,7 +181,9 @@ const Header = () => {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle sx={{ fontSize: '30px' }} />
+              <AccountCircle
+                sx={{ fontSize: '35px', color: '#cbced4', mb: 0.8 }}
+              />
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

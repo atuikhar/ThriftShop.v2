@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
   }
   body {
-    font-family: ${(props) => props.theme.fonts.title};
+    font-family: ${(props) => props.theme.fonts.main};
     font-size: 1.6rem;
     background: #41295a;
     background: -webkit-linear-gradient(to right, #2F0743, #41295a);

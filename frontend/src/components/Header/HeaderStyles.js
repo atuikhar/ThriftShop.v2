@@ -2,7 +2,9 @@ import { styled, alpha } from '@mui/material/styles'
 import InputBase from '@mui/material/InputBase'
 import { Typography } from '@mui/material'
 
-export const Text = styled(Typography)``
+export const Text = styled(Typography)`
+  font-weight: bold;
+`
 
 export const Search = styled('div')(({ theme }) => ({
   color: '#fff',
