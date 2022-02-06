@@ -7,39 +7,39 @@ export const Rating = ({ value, color }) => {
   return (
     <Wrapper style={{ color }}>
       {value >= 1 ? (
-        <StarIcon fontSize="large" />
+        <StarIcon fontSize="small" />
       ) : value >= 0.5 ? (
-        <StarHalfIcon fontSize="large" />
+        <StarHalfIcon fontSize="small" />
       ) : (
-        <StarOutlineIcon fontSize="large" />
+        <StarOutlineIcon fontSize="small" />
       )}
       {value >= 2 ? (
-        <StarIcon fontSize="large" />
+        <StarIcon fontSize="small" />
       ) : value >= 1.5 ? (
-        <StarHalfIcon fontSize="large" />
+        <StarHalfIcon fontSize="small" />
       ) : (
-        <StarOutlineIcon fontSize="large" />
+        <StarOutlineIcon fontSize="small" />
       )}
       {value >= 3 ? (
-        <StarIcon fontSize="large" />
+        <StarIcon fontSize="small" />
       ) : value >= 2.5 ? (
-        <StarHalfIcon fontSize="large" />
+        <StarHalfIcon fontSize="small" />
       ) : (
-        <StarOutlineIcon fontSize="large" />
+        <StarOutlineIcon fontSize="small" />
       )}
       {value >= 4 ? (
-        <StarIcon fontSize="large" />
+        <StarIcon fontSize="small" />
       ) : value >= 3.5 ? (
-        <StarHalfIcon fontSize="large" />
+        <StarHalfIcon fontSize="small" />
       ) : (
-        <StarOutlineIcon fontSize="large" />
+        <StarOutlineIcon fontSize="small" />
       )}
       {value >= 5 ? (
-        <StarIcon fontSize="large" />
+        <StarIcon fontSize="small" />
       ) : value >= 4.5 ? (
-        <StarHalfIcon fontSize="large" />
+        <StarHalfIcon fontSize="small" />
       ) : (
-        <StarOutlineIcon fontSize="large" />
+        <StarOutlineIcon fontSize="small" />
       )}
     </Wrapper>
   )

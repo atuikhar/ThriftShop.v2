@@ -123,7 +123,7 @@ const Header = () => {
   )
 
   return (
-    <Box sx={{ flexGrow: 1, m: 5 }}>
+    <Box sx={{ flexGrow: 1, m: 3 }}>
       <AppBar
         position="static"
         sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}
@@ -134,18 +134,13 @@ const Header = () => {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
           ></IconButton>
           <Link to="/">
             <Text
-              variant="h4"
               noWrap
               component="div"
               sx={{
-                color: '#cbced4',
-                // display: { xs: 'none', sm: 'block' },
                 fontFamily: 'Poppins, Sans Serif',
-                fontSize: { xs: '20px', sm: '30px', md: '35px', lg: '35px' },
               }}
             >
               ThriftShop

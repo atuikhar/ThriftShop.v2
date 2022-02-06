@@ -8,4 +8,7 @@ export const LayoutWrapper = styled(Container)`
   @media ${(props) => props.theme.breakpoints.sm} {
     margin-top: 10px;
   }
+
+  @media and screen (max-width: 320px) {
+  }
 `

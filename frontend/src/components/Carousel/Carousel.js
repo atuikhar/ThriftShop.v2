@@ -26,7 +26,7 @@ const Carousel = () => {
   return (
     <Wrapper>
       <GridContainer container sx={{ m: 0 }}>
-        <GridContainer item xs={12} sm={12} md={12} lg={8}>
+        <GridContainer item xs={12} sm={12} md={12} lg={12}>
           <CarouselContainer
             index={index}
             onChange={handleChange}
@@ -45,7 +45,7 @@ const Carousel = () => {
             ))}
           </CarouselContainer>
         </GridContainer>
-        <GridContainer item xs={12} sm={12} md={12} lg={4}>
+        {/* <GridContainer item xs={12} sm={12} md={12} lg={4}>
           <Wrap>
             <CarouselContainer
               index={index}
@@ -75,8 +75,9 @@ const Carousel = () => {
                       <Text>{` -${product.colorWay[1]}`} </Text>
                       <Text>{`-${product.colorWay[2]} `} </Text>
                     </ListItemText>
-                    <Description>(Sizes)</Description>
                     <ListItemText>
+                      <Description>(Sizes)</Description>
+
                       <Text>{`${product.sizes[0]} `}</Text>
                       <Text>{` -${product.sizes[1]}`} </Text>
                       <Text>{`-${product.sizes[2]} `} </Text>
@@ -95,7 +96,7 @@ const Carousel = () => {
               ))}
             </CarouselContainer>
           </Wrap>
-        </GridContainer>
+        </GridContainer> */}
       </GridContainer>
     </Wrapper>
   )

@@ -23,6 +23,7 @@ const Product = (props) => {
         style={{
           display: 'flex',
           justifyContent: 'center',
+          padding: '2px',
         }}
       >
         <Button>

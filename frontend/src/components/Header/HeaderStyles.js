@@ -4,6 +4,12 @@ import { Typography } from '@mui/material'
 
 export const Text = styled(Typography)`
   font-weight: bold;
+  font-size: 25px;
+  color: #cbced4;
+
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
 `
 
 export const Search = styled('div')(({ theme }) => ({
