@@ -1,19 +1,24 @@
-// import express from 'express';
-// import dotenv from 'dotenv';
+import express from 'express';
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
 
-// dotenv.config();
+dotenv.config();
 
-// const app = express();
+connectDB();
 
-// app.get('/', (req, res) => {
-//   res.send(' Server Started ');
-// });
+const app = express();
 
-// const PORT = process.env.PORT || 5000;
+app.use(express.json());
 
-// app.listen(
-//   PORT,
-//   console.log(
-//     `Server Running in ${process.env.NODE_ENV} Mode on PORT ${PORT}`.yellow.bold
-//   )
-// );
+app.get('/', (req, res) => {
+  res.send(' API Running... ');
+});
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(
+  PORT,
+  console.log(
+    `Server Running in ${process.env.NODE_ENV} Mode on PORT ${PORT}`.yellow.bold
+  )
+);
