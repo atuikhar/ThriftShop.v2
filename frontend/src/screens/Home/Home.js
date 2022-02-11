@@ -1,28 +1,20 @@
-import React from 'react'
-import Product from 'components/Product/Product'
-import { Wrapper, WrapperGrid } from './HomeStyles'
-
-import { products } from '../../data'
+import { Link } from 'react-router-dom'
+import { Layout } from 'layout/Layout'
+import Carousel from 'components/Carousel/Carousel'
+import { Div, Button, Text } from './HomeStyles'
 
 const Home = () => {
   return (
-    <Wrapper>
-      <WrapperGrid>
-        {products.map((product, index) => {
-          return (
-            <Product
-              key={index}
-              index={index}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              rating={product.rating}
-              reviews={product.numReviews}
-            />
-          )
-        })}
-      </WrapperGrid>
-    </Wrapper>
+    <Layout>
+      <Carousel />
+      <Div>
+        <Link to="/shop">
+          <Button>
+            <Text>Start Shopping</Text>
+          </Button>
+        </Link>
+      </Div>
+    </Layout>
   )
 }
 

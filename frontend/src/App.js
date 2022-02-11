@@ -1,15 +1,16 @@
-// import { Routes, Route } from 'react-router-dom'
-import { Layout } from 'layout/Layout'
-import Carousel from 'components/Carousel/Carousel'
+import { Routes, Route } from 'react-router-dom'
 import Home from 'screens/Home/Home'
+import Shop from 'screens/Shop/Shop'
+import ProductDetail from 'screens/ProductDetails/ProductDetails'
 
 const App = () => {
   return (
     <>
-      <Layout>
-        <Carousel />
-        <Home />
-      </Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+      </Routes>
     </>
   )
 }

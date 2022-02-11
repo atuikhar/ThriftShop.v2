@@ -1,5 +1,6 @@
 export const products = [
   {
+    id: '1',
     name: 'Air Jordan 1',
     image: '/images/AirJordanTS.jpg',
     description:
@@ -7,15 +8,15 @@ export const products = [
     brand: 'Nike',
     category: 'Footwear',
     price: 5000,
-    countInStock: 10,
+    countInStock: 1,
     sizes: [30, 35, 40],
     rating: 4.5,
     numReviews: 12,
     colorWay: ['Red', 'Green', ''],
   },
   {
+    id: '2',
     name: 'Adidas Red Tshirt',
-
     image: '/images/AdidasTshirt.jpg',
     description:
       'One, two, three. Its that easy. 3-Stripes in contrast colours tell the world you are rolling ',
@@ -30,8 +31,8 @@ export const products = [
   },
 
   {
+    id: '3',
     name: 'Vans Of The Wall',
-
     image: '/images/Vans.jpg',
     description:
       'Vans Red T-Shirt Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -45,8 +46,8 @@ export const products = [
     colorWay: ['Red', 'Green', 'Blue'],
   },
   {
+    id: '4',
     name: 'Adidas',
-
     image: '/images/AdidasGrey.jpg',
     description: 'Adidas ZX 500 Jordan Closeup Lorem Ipsum .',
     brand: 'Adidas',
@@ -60,6 +61,7 @@ export const products = [
     numReviews: 10,
   },
   {
+    id: '5',
     name: 'Air Jordan 1',
     image: '/images/AirJordanTS.jpg',
     description:
@@ -74,6 +76,7 @@ export const products = [
     colorWay: ['Red', 'Green', ''],
   },
   {
+    id: '6',
     name: 'Adidas Red Tshirt',
 
     image: '/images/AdidasTshirt.jpg',
@@ -90,8 +93,8 @@ export const products = [
   },
 
   {
+    id: '7',
     name: 'Vans Of The Wall',
-
     image: '/images/Vans.jpg',
     description:
       'Vans Red T-Shirt Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -105,8 +108,8 @@ export const products = [
     colorWay: ['Red', 'Green', 'Blue'],
   },
   {
+    id: '8',
     name: 'Adidas',
-
     image: '/images/AdidasGrey.jpg',
     description: 'Adidas ZX 500 Jordan Closeup Lorem Ipsum .',
     brand: 'Adidas',
@@ -120,6 +123,7 @@ export const products = [
     numReviews: 10,
   },
   {
+    id: '9',
     name: 'Air Jordan 1',
     image: '/images/AirJordanTS.jpg',
     description:
@@ -134,8 +138,8 @@ export const products = [
     colorWay: ['Red', 'Green', ''],
   },
   {
+    id: '10',
     name: 'Adidas Red Tshirt',
-
     image: '/images/AdidasTshirt.jpg',
     description:
       'One, two, three. Its that easy. 3-Stripes in contrast colours tell the world you are rolling ',
@@ -150,8 +154,8 @@ export const products = [
   },
 
   {
+    id: '11',
     name: 'Vans Of The Wall',
-
     image: '/images/Vans.jpg',
     description:
       'Vans Red T-Shirt Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -165,8 +169,8 @@ export const products = [
     colorWay: ['Red', 'Green', 'Blue'],
   },
   {
+    id: '12',
     name: 'Adidas',
-
     image: '/images/AdidasGrey.jpg',
     description: 'Adidas ZX 500 Jordan Closeup Lorem Ipsum .',
     brand: 'Adidas',

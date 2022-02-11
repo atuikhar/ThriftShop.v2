@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import {
   AppBar,
   Box,
@@ -29,6 +30,8 @@ const Header = () => {
 
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
+
+  const location = useLocation()
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget)
@@ -95,18 +98,20 @@ const Header = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="Cart Items" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <Link to="/cart" style={{ textDecoration: 'none' }}>
-              <ShoppingCartIcon />
-            </Link>
-          </Badge>
-        </IconButton>
-        <Link to="/cart">
-          <Text color="#000">Cart</Text>
-        </Link>
-      </MenuItem>
+      {location.pathname !== '/' && (
+        <MenuItem>
+          <IconButton size="large" aria-label="Cart Items" color="inherit">
+            <Badge badgeContent={4} color="error">
+              <Link to="/cart" style={{ textDecoration: 'none' }}>
+                <ShoppingCartIcon />
+              </Link>
+            </Badge>
+          </IconButton>
+          <Link to="/cart">
+            <Text color="#000">Cart</Text>
+          </Link>
+        </MenuItem>
+      )}
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -146,27 +151,30 @@ const Header = () => {
               ThriftShop
             </Text>
           </Link>
-          {/* <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search> */}
+          {location.pathname !== '/' && (
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search>
+          )}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="Cart Items" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <Link to="/cart">
-                  <ShoppingCartIcon
-                    sx={{ fontSize: '35px', color: '#cbced4' }}
-                  />
-                </Link>
-              </Badge>
-            </IconButton>
-
+            {location.pathname !== '/' && (
+              <IconButton size="large" aria-label="Cart Items" color="inherit">
+                <Badge badgeContent={4} color="error">
+                  <Link to="/cart">
+                    <ShoppingCartIcon
+                      sx={{ fontSize: '35px', color: '#cbced4' }}
+                    />
+                  </Link>
+                </Badge>
+              </IconButton>
+            )}
             <IconButton
               size="large"
               edge="end"

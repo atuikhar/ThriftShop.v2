@@ -1,4 +1,4 @@
-import { Card } from '@mui/material'
+import { Card, CardActions } from '@mui/material'
 import styled from 'styled-components'
 
 export const ProductCard = styled(Card)`
@@ -57,4 +57,10 @@ export const Button = styled.button`
     border-radius: 2px;
     width: 30%;
   }
+`
+
+export const CardAction = styled(CardActions)`
+  display: flex;
+  justify-content: center;
+  padding: 2px;
 `
