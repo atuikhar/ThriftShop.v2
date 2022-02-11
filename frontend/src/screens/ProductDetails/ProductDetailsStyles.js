@@ -9,7 +9,7 @@ export const Wrapper = styled(Container)`
 `
 export const WrapperButton = styled(Container)`
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   margin-top: 20px;
   padding: 0;
 `
@@ -37,6 +37,8 @@ export const Tab = styled(Table)`
 
 export const Text = styled(Typography)`
   font-size: 15px;
+  font-family: Poppins;
+  font-weight: bold;
   color: #bebebe;
 `
 
@@ -53,4 +55,5 @@ export const Body = styled(Typography)`
 `
 export const RatingContainer = styled(Container)`
   font-size: 15px;
+  text-align: center;
 `

@@ -26,6 +26,7 @@ import {
   Select,
   InputLabel,
 } from '@mui/material'
+
 import { listProductDetails } from 'actions/productActions'
 
 const ProductDetail = ({ match }) => {
@@ -52,23 +53,27 @@ const ProductDetail = ({ match }) => {
     <Layout>
       <Wrapper>
         <Grid container spacing={1}>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={6}>
             <CardImage src={product.image} alt={product.name} />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={8} md={4}>
             <Button variant="contained">
               <Text>&#x20B9; {product.price}</Text>
             </Button>
             <Title>{product.name}</Title>
+            <RatingContainer>
+              <Rating
+                value={product.rating}
+                text={`${product.numReviews} reviews`}
+                color={'#FFE53B'}
+              />
+            </RatingContainer>
             <Body>{product.description}</Body>
 
             <TableContainer>
-              <Tab>
+              {/* <Tab>
                 <TableBody>
                   <TableRow>
-                    <Cell component="th" scope="row">
-                      {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
-                    </Cell>
                     <Cell align="right">
                       <RatingContainer>
                         <Rating
@@ -80,22 +85,21 @@ const ProductDetail = ({ match }) => {
                     </Cell>
                   </TableRow>
                 </TableBody>
-              </Tab>
+              </Tab> */}
             </TableContainer>
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={4} md={2}>
             <TableContainer>
               <Tab>
                 <TableBody>
                   {product.countInStock > 0 && product.sizes && (
                     <TableRow>
-                      <Cell component="th" scope="row">
-                        <Text>Size :</Text>
-                      </Cell>
                       <Cell align="right">
                         <Box sx={{ minWidth: 50 }}>
-                          <FormControl>
-                            <InputLabel id="sizeSelect">Size</InputLabel>
+                          <FormControl fullWidth>
+                            <InputLabel id="sizeSelect">
+                              <Text>Size</Text>
+                            </InputLabel>
                             <Select
                               labelId="sizeSelect"
                               id="size"
@@ -105,7 +109,7 @@ const ProductDetail = ({ match }) => {
                             >
                               {product.sizes.map((x) => (
                                 <MenuItem key={x} value={x}>
-                                  {x}
+                                  <Text>{x}</Text>
                                 </MenuItem>
                               ))}
                             </Select>
@@ -116,13 +120,12 @@ const ProductDetail = ({ match }) => {
                   )}
                   {product.countInStock > 0 && product.colorWay && (
                     <TableRow>
-                      <Cell component="th" scope="row">
-                        <Text>ColorWay :</Text>
-                      </Cell>
                       <Cell align="right">
                         <Box sx={{ minWidth: 50 }}>
-                          <FormControl>
-                            <InputLabel id="colorWay">Color</InputLabel>
+                          <FormControl fullWidth>
+                            <InputLabel id="colorWay">
+                              <Text>Color</Text>
+                            </InputLabel>
                             <Select
                               labelId="colorWay"
                               id="color"
@@ -132,7 +135,7 @@ const ProductDetail = ({ match }) => {
                             >
                               {product.colorWay.map((x) => (
                                 <MenuItem key={x} value={x}>
-                                  {x}
+                                  <Text>{x}</Text>
                                 </MenuItem>
                               ))}
                             </Select>
@@ -143,13 +146,12 @@ const ProductDetail = ({ match }) => {
                   )}
                   {product.countInStock > 0 && (
                     <TableRow>
-                      <Cell component="th" scope="row">
-                        <Text>Qty :</Text>
-                      </Cell>
                       <Cell align="right">
                         <Box sx={{ minWidth: 50 }}>
-                          <FormControl>
-                            <InputLabel id="qtyCount">Qty</InputLabel>
+                          <FormControl fullWidth>
+                            <InputLabel id="qtyCount">
+                              <Text>Qty</Text>
+                            </InputLabel>
                             <Select
                               labelId="qtyCount"
                               id="qtySelect"
@@ -160,7 +162,7 @@ const ProductDetail = ({ match }) => {
                               {[...Array(product.countInStock).keys()].map(
                                 (x) => (
                                   <MenuItem key={x + 1} value={x + 1}>
-                                    {x + 1}
+                                    <Text>{x + 1}</Text>
                                   </MenuItem>
                                 )
                               )}
@@ -173,6 +175,13 @@ const ProductDetail = ({ match }) => {
                 </TableBody>
               </Tab>
             </TableContainer>
+            {/* <Cell component="th" scope="row">
+              {product.countInStock > 0 ? (
+                <Text>InStock</Text>
+              ) : (
+                <Text>OutOfStock</Text>
+              )}
+            </Cell> */}
             <WrapperButton>
               <Button
                 onClick={addToCart}
@@ -187,6 +196,7 @@ const ProductDetail = ({ match }) => {
           </Grid>
         </Grid>
       </Wrapper>
+      <Grid container></Grid>
     </Layout>
   )
 }
