@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Rating } from 'components/Rating/Rating'
 import { Layout } from 'layout/Layout'
-import { useLocation } from 'react-router-dom'
-
 import {
   Wrapper,
   CardImage,
@@ -28,17 +26,27 @@ import {
   Select,
   InputLabel,
 } from '@mui/material'
-import { products } from 'data'
+import { listProductDetails } from 'actions/productActions'
 
 const ProductDetail = ({ match }) => {
-  const [qty, setQty] = useState(0)
-  const [size, setSize] = useState(0)
-  const [color, setColorWay] = useState(0)
-
   const params = useParams()
+  const navigate = useNavigate()
+
+  const [qty, setQty] = useState('')
+  const [size, setSize] = useState('')
+  const [color, setColorWay] = useState('')
+
+  const dispatch = useDispatch()
+
+  const productDetails = useSelector((state) => state.productDetails)
+
+  const { loading, error, product } = productDetails
+
+  useEffect(() => {
+    dispatch(listProductDetails(params.id))
+  }, [params, dispatch])
 
   const addToCart = () => {}
-  const product = products.find((p) => p.id === params.id)
 
   return (
     <Layout>

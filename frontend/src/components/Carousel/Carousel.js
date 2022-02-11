@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   Wrapper,
   CarouselContainer,
@@ -6,9 +7,19 @@ import {
   Wrap,
 } from './CarouselStyles'
 
-import { products } from '../../data'
+import { listProducts } from 'actions/productActions'
 
 const Carousel = () => {
+  const dispatch = useDispatch()
+
+  const productList = useSelector((state) => state.productList)
+
+  const { loading, error, products } = productList
+
+  useEffect(() => {
+    dispatch(listProducts())
+  }, [dispatch])
+
   return (
     <Wrapper>
       <CarouselContainer

@@ -2,6 +2,8 @@ import asyncHandler from 'express-async-handler';
 import User from '../models/userModel.js';
 import generateToken from '../utils/generateToken.js';
 
+//USER AUTHENTICATION
+
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -21,6 +23,8 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
+// GET USER
+
 const getUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
@@ -36,6 +40,8 @@ const getUserProfile = asyncHandler(async (req, res) => {
     throw new Error('User not Found');
   }
 });
+
+//REGISTER USER
 
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;

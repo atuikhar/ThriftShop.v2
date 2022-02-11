@@ -1,6 +1,5 @@
 export const products = [
   {
-    id: '1',
     name: 'Air Jordan 1',
     image: '/images/AirJordanTS.jpg',
     description:
@@ -15,7 +14,6 @@ export const products = [
     colorWay: ['Red', 'Green', ''],
   },
   {
-    id: '2',
     name: 'Adidas Red Tshirt',
     image: '/images/AdidasTshirt.jpg',
     description:
@@ -31,7 +29,6 @@ export const products = [
   },
 
   {
-    id: '3',
     name: 'Vans Of The Wall',
     image: '/images/Vans.jpg',
     description:
@@ -46,7 +43,6 @@ export const products = [
     colorWay: ['Red', 'Green', 'Blue'],
   },
   {
-    id: '4',
     name: 'Adidas',
     image: '/images/AdidasGrey.jpg',
     description: 'Adidas ZX 500 Jordan Closeup Lorem Ipsum .',
@@ -61,7 +57,6 @@ export const products = [
     numReviews: 10,
   },
   {
-    id: '5',
     name: 'Air Jordan 1',
     image: '/images/AirJordanTS.jpg',
     description:
@@ -76,7 +71,6 @@ export const products = [
     colorWay: ['Red', 'Green', ''],
   },
   {
-    id: '6',
     name: 'Adidas Red Tshirt',
 
     image: '/images/AdidasTshirt.jpg',
@@ -93,7 +87,6 @@ export const products = [
   },
 
   {
-    id: '7',
     name: 'Vans Of The Wall',
     image: '/images/Vans.jpg',
     description:
@@ -108,7 +101,6 @@ export const products = [
     colorWay: ['Red', 'Green', 'Blue'],
   },
   {
-    id: '8',
     name: 'Adidas',
     image: '/images/AdidasGrey.jpg',
     description: 'Adidas ZX 500 Jordan Closeup Lorem Ipsum .',
@@ -123,7 +115,6 @@ export const products = [
     numReviews: 10,
   },
   {
-    id: '9',
     name: 'Air Jordan 1',
     image: '/images/AirJordanTS.jpg',
     description:
@@ -138,7 +129,6 @@ export const products = [
     colorWay: ['Red', 'Green', ''],
   },
   {
-    id: '10',
     name: 'Adidas Red Tshirt',
     image: '/images/AdidasTshirt.jpg',
     description:
@@ -154,7 +144,6 @@ export const products = [
   },
 
   {
-    id: '11',
     name: 'Vans Of The Wall',
     image: '/images/Vans.jpg',
     description:
@@ -169,7 +158,6 @@ export const products = [
     colorWay: ['Red', 'Green', 'Blue'],
   },
   {
-    id: '12',
     name: 'Adidas',
     image: '/images/AdidasGrey.jpg',
     description: 'Adidas ZX 500 Jordan Closeup Lorem Ipsum .',

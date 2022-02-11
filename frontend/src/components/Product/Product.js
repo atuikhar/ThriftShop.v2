@@ -1,7 +1,5 @@
 import * as React from 'react'
-import CardContent from '@mui/material/CardContent'
-import { CardActionArea } from '@mui/material'
-
+import { CardActionArea, CardContent } from '@mui/material'
 import {
   ProductCard,
   Image,
@@ -14,25 +12,24 @@ import {
 import { Rating } from 'components/Rating/Rating'
 import { Link } from 'react-router-dom'
 
-const Product = (props) => {
-  const { name, image, price, reviews, rating, id } = props
+const Product = ({ product }) => {
   return (
     <ProductCard>
       <CardActionArea>
-        <Link to={`/product/${id}`}>
-          <Image src={image} />
+        <Link to={`/product/${product._id}`}>
+          <Image src={product.image} />
         </Link>
         <CardContent sx={{ p: 0 }}>
-          <Title>{name}</Title>
+          <Title>{product.name}</Title>
           <Text>
-            <Rating value={rating} color="#41295a" />
+            <Rating value={product.rating} color="#41295a" />
           </Text>
-          <Text1>({reviews} reviews)</Text1>
+          <Text1>({product.reviews} reviews)</Text1>
         </CardContent>
       </CardActionArea>
       <CardAction>
         <Button>
-          <Text>&#x20B9; {price}</Text>
+          <Text>&#x20B9; {product.price}</Text>
         </Button>
       </CardAction>
     </ProductCard>

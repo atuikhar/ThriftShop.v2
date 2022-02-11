@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import { Layout } from 'layout/Layout'
-import Carousel from 'components/Carousel/Carousel'
+// import Carousel from 'components/Carousel/Carousel'
 import { Div, Button, Text } from './HomeStyles'
 
 const Home = () => {
   return (
     <Layout>
-      <Carousel />
+      {/* <Carousel /> */}
       <Div>
         <Link to="/shop">
           <Button>
