@@ -6,6 +6,8 @@ export const Wrapper = styled(Container)`
   padding: 0;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 320px) {
+  }
 `
 export const WrapperButton = styled(Container)`
   display: flex;
@@ -36,10 +38,14 @@ export const Tab = styled(Table)`
 `
 
 export const Text = styled(Typography)`
-  font-size: 15px;
+  font-size: 12px;
   font-family: Poppins;
   font-weight: bold;
   color: #bebebe;
+
+  @media screen and (max-width: 320px) {
+    font-size: 8px;
+  }
 `
 
 export const Title = styled(Typography)`
@@ -48,12 +54,26 @@ export const Title = styled(Typography)`
   font-weight: bold;
   text-align: center;
   margin: 15px;
+  @media screen and (max-width: 640px) {
+    margin-top: 40px;
+  }
+  @media screen and (max-width: 320px) {
+    text-align: start;
+    font-size: 15px;
+    margin-top: 40px;
+  }
 `
 export const Body = styled(Typography)`
-  font-size: 11px;
+  font-size: 15px;
   color: #bebebe;
+  @media screen and (max-width: 320px) {
+    padding-top: 30px;
+  }
 `
 export const RatingContainer = styled(Container)`
   font-size: 15px;
   text-align: center;
+  @media screen and (max-width: 320px) {
+    text-align: start;
+  }
 `

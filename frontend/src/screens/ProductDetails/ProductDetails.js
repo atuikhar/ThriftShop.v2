@@ -52,13 +52,13 @@ const ProductDetail = ({ match }) => {
   return (
     <Layout>
       <Wrapper>
-        <Grid container spacing={1}>
+        <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <CardImage src={product.image} alt={product.name} />
           </Grid>
           <Grid item xs={8} md={4}>
             <Button variant="contained">
-              <Text>&#x20B9; {product.price}</Text>
+              <Text>&#x20B9;. {product.price}</Text>
             </Button>
             <Title>{product.name}</Title>
             <RatingContainer>
@@ -91,7 +91,7 @@ const ProductDetail = ({ match }) => {
           <Grid item xs={4} md={2}>
             <TableContainer>
               <Tab>
-                <TableBody>
+                <TableBody sx={{ p: 0 }}>
                   {product.countInStock > 0 && product.sizes && (
                     <TableRow>
                       <Cell align="right">
