@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
-    "client": " yarn start --prefix frontend",
+    "client": " npm start --prefix frontend",
     "dev": "concurrently \"yarn run server\" \"yarn run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d"
