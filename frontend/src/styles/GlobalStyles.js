@@ -7,11 +7,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    &::-webkit-scrollbar {
-      border: none;
-    }
-    scrollbar-width: none;
-
+    
   }
   html {
     font-size: 62.5%;

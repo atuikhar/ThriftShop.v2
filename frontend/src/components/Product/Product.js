@@ -24,7 +24,7 @@ const Product = ({ product }) => {
           <Text>
             <Rating value={product.rating} color="#41295a" />
           </Text>
-          <Text1>({product.reviews} reviews)</Text1>
+          <Text1>({product.numReviews} reviews)</Text1>
         </CardContent>
       </CardActionArea>
       <CardAction>
