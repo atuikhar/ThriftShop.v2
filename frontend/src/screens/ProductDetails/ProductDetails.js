@@ -71,104 +71,109 @@ const ProductDetail = ({ match }) => {
           <Body>{product.description}</Body>
         </Grid>
         <Grid item xs={4} md={2}>
-          <TableContainer>
-            <Tab>
-              <TableBody sx={{ p: 0 }}>
-                {product.countInStock > 0 && product.sizes && (
-                  <TableRow>
-                    <Cell align="right">
-                      <Box sx={{ minWidth: 50 }}>
-                        <FormControl fullWidth>
-                          <InputLabel id="sizeSelect">
-                            <Text>Size</Text>
-                          </InputLabel>
-                          <Select
-                            labelId="sizeSelect"
-                            id="size"
-                            value={size}
-                            label="Size"
-                            onChange={(e) => setSize(e.target.value)}
-                          >
-                            {product.sizes.map((x) => (
-                              <MenuItem key={x} value={x}>
-                                <Text>{x}</Text>
-                              </MenuItem>
-                            ))}
-                          </Select>
-                        </FormControl>
-                      </Box>
-                    </Cell>
-                  </TableRow>
-                )}
-                {product.countInStock > 0 && product.colorWay && (
-                  <TableRow>
-                    <Cell align="right">
-                      <Box sx={{ minWidth: 50 }}>
-                        <FormControl fullWidth>
-                          <InputLabel id="colorWay">
-                            <Text>Color</Text>
-                          </InputLabel>
-                          <Select
-                            labelId="colorWay"
-                            id="color"
-                            value={color}
-                            label="ColorWay"
-                            onChange={(e) => setColorWay(e.target.value)}
-                          >
-                            {product.colorWay.map((x) => (
-                              <MenuItem key={x} value={x}>
-                                <Text>{x}</Text>
-                              </MenuItem>
-                            ))}
-                          </Select>
-                        </FormControl>
-                      </Box>
-                    </Cell>
-                  </TableRow>
-                )}
-                {product.countInStock > 0 && (
-                  <TableRow>
-                    <Cell align="right">
-                      <Box sx={{ minWidth: 50 }}>
-                        <FormControl fullWidth>
-                          <InputLabel id="qtyCount">
-                            <Text>Qty</Text>
-                          </InputLabel>
-                          <Select
-                            labelId="qtyCount"
-                            id="qtySelect"
-                            value={qty}
-                            label="qty"
-                            onChange={(e) => setQty(e.target.value)}
-                          >
-                            {[...Array(product.countInStock).keys()].map(
-                              (x) => (
-                                <MenuItem key={x + 1} value={x + 1}>
-                                  <Text>{x + 1}</Text>
+          <form onSubmit={addToCart}>
+            <TableContainer>
+              <Tab>
+                <TableBody sx={{ p: 0 }}>
+                  {product.countInStock > 0 && product.sizes && (
+                    <TableRow>
+                      <Cell align="right">
+                        <Box sx={{ minWidth: 50 }}>
+                          <FormControl fullWidth>
+                            <InputLabel id="sizeSelect">
+                              <Text>Size</Text>
+                            </InputLabel>
+                            <Select
+                              required
+                              labelId="sizeSelect"
+                              id="size"
+                              value={size}
+                              label="Size"
+                              onChange={(e) => setSize(e.target.value)}
+                            >
+                              {product.sizes.map((x) => (
+                                <MenuItem key={x} value={x}>
+                                  <Text>{x}</Text>
                                 </MenuItem>
-                              )
-                            )}
-                          </Select>
-                        </FormControl>
-                      </Box>
-                    </Cell>
-                  </TableRow>
-                )}
-              </TableBody>
-            </Tab>
-          </TableContainer>
+                              ))}
+                            </Select>
+                          </FormControl>
+                        </Box>
+                      </Cell>
+                    </TableRow>
+                  )}
+                  {product.countInStock > 0 && product.colorWay && (
+                    <TableRow>
+                      <Cell align="right">
+                        <Box sx={{ minWidth: 50 }}>
+                          <FormControl fullWidth>
+                            <InputLabel id="colorWay">
+                              <Text>Color</Text>
+                            </InputLabel>
+                            <Select
+                              required
+                              labelId="colorWay"
+                              id="color"
+                              value={color}
+                              label="ColorWay"
+                              onChange={(e) => setColorWay(e.target.value)}
+                            >
+                              {product.colorWay.map((x) => (
+                                <MenuItem key={x} value={x}>
+                                  <Text>{x}</Text>
+                                </MenuItem>
+                              ))}
+                            </Select>
+                          </FormControl>
+                        </Box>
+                      </Cell>
+                    </TableRow>
+                  )}
+                  {product.countInStock > 0 && (
+                    <TableRow>
+                      <Cell align="right">
+                        <Box sx={{ minWidth: 50 }}>
+                          <FormControl fullWidth>
+                            <InputLabel id="qtyCount">
+                              <Text>Qty</Text>
+                            </InputLabel>
+                            <Select
+                              required
+                              labelId="qtyCount"
+                              id="qtySelect"
+                              value={qty}
+                              label="qty"
+                              onChange={(e) => setQty(e.target.value)}
+                            >
+                              {[...Array(product.countInStock).keys()].map(
+                                (x) => (
+                                  <MenuItem key={x + 1} value={x + 1}>
+                                    <Text>{x + 1}</Text>
+                                  </MenuItem>
+                                )
+                              )}
+                            </Select>
+                          </FormControl>
+                        </Box>
+                      </Cell>
+                    </TableRow>
+                  )}
+                </TableBody>
+              </Tab>
+            </TableContainer>
 
-          <WrapperButton>
-            <Button
-              onClick={addToCart}
-              variant="contained"
-              disabled={product.countInStock === 0}
-            >
-              <Text>
-                {product.countInStock > 0 ? 'Add To Cart' : 'Out Of Stock'}
-              </Text>
-            </Button>
-          </WrapperButton>
+            <WrapperButton>
+              <Button
+                type="submit"
+                variant="contained"
+                disabled={product.countInStock === 0}
+              >
+                <Text>
+                  {product.countInStock > 0 ? 'Add To Cart' : 'Out Of Stock'}
+                </Text>
+              </Button>
+            </WrapperButton>
+          </form>
         </Grid>
       </Grid>
     </Wrapper>
