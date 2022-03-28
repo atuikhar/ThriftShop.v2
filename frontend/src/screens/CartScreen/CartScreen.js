@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate, useParams, useLocation } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import {
   Button,
@@ -29,28 +29,13 @@ import {
 import { addToCart, removeFromCart } from 'actions/cartActions'
 
 const CartScreen = () => {
-  const params = useParams()
-  const location = useLocation()
   const navigate = useNavigate()
-
-  const productId = params.id
-
-  const qty = location.search ? Number(location.search.split('=')[1][0]) : 1
-
-  const size = location.search
-    ? location.search.split('=')[2].split('?')[0]
-    : 30
-
-  const color = location.search ? location.search.split('=')[3] : 30
 
   const dispatch = useDispatch()
 
   const cart = useSelector((state) => state.cart)
 
   const { cartItems } = cart
-  useEffect(() => {
-    dispatch(addToCart(productId, qty, color, size))
-  }, [dispatch, productId, qty, color, size])
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id))
