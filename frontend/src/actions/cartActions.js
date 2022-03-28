@@ -3,6 +3,8 @@ import axios from 'axios'
 import {
   CART_ADD_ITEM,
   CART_REMOVE_ITEM,
+  CART_UPDATE_COLOR,
+  CART_UPDATE_SIZE,
 } from 'constants/cartConstants'
 
 export const addToCart =
@@ -34,5 +36,19 @@ export const removeFromCart = (id) => (dispatch, getState) => {
     type: CART_REMOVE_ITEM,
     payload: id,
   })
+  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
+}
+
+export const updateColor = (id, color) => async (dispatch, getState) => {
+  const { data } = await axios.get(`/api/products/${id}`)
+
+  dispatch({
+    type: CART_UPDATE_COLOR,
+    payload: {
+      product: data._id,
+      color,
+    },
+  })
+
   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
 }

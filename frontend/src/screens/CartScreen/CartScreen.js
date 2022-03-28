@@ -26,7 +26,7 @@ import {
   Total,
   Subtotal,
 } from './CartScreenStyles'
-import { addToCart, removeFromCart } from 'actions/cartActions'
+import { addToCart, removeFromCart, updateColor } from 'actions/cartActions'
 
 const CartScreen = () => {
   const navigate = useNavigate()
@@ -77,9 +77,7 @@ const CartScreen = () => {
                                 value={item.qty}
                                 label="qty"
                                 onChange={(e) =>
-                                  dispatch(
-                                    addToCart(item.product, e.target.value)
-                                  )
+                                  dispatch(addToCart(item.qty, e.target.value))
                                 }
                               >
                                 {[...Array(item.countInStock).keys()].map(
@@ -100,7 +98,7 @@ const CartScreen = () => {
                                 label="ColorWay"
                                 onChange={(e) =>
                                   dispatch(
-                                    addToCart(item.color, e.target.value)
+                                    updateColor(item.product, e.target.value)
                                   )
                                 }
                               >
