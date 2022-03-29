@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -26,9 +26,13 @@ import {
   Total,
   Subtotal,
 } from './CartScreenStyles'
-import { addToCart, removeFromCart, updateColor } from 'actions/cartActions'
+import { addToCart, removeFromCart, updateCart } from 'actions/cartActions'
 
 const CartScreen = () => {
+  const [qty, setQty] = useState('')
+  const [color, setColor] = useState('')
+  const [size, setSize] = useState('')
+
   const navigate = useNavigate()
 
   const dispatch = useDispatch()
@@ -76,9 +80,7 @@ const CartScreen = () => {
                               <Select
                                 value={item.qty}
                                 label="qty"
-                                onChange={(e) =>
-                                  dispatch(addToCart(item.qty, e.target.value))
-                                }
+                                onChange={(e) => setQty(e.target.value)}
                               >
                                 {[...Array(item.countInStock).keys()].map(
                                   (x) => (
@@ -96,11 +98,7 @@ const CartScreen = () => {
                                 id="color"
                                 value={item.color}
                                 label="ColorWay"
-                                onChange={(e) =>
-                                  dispatch(
-                                    updateColor(item.product, e.target.value)
-                                  )
-                                }
+                                onChange={(e) => setColor(e.target.value)}
                               >
                                 {item.colorWay.map((x) => (
                                   <MenuItem key={x} value={x}>
@@ -116,9 +114,7 @@ const CartScreen = () => {
                                 id="size"
                                 value={item.size}
                                 label="Size"
-                                onChange={(e) =>
-                                  dispatch(addToCart(item.size, e.target.value))
-                                }
+                                onChange={(e) => setSize(e.target.value)}
                               >
                                 {item.sizes.map((x) => (
                                   <MenuItem key={x} value={x}>
