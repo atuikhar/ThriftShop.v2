@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -26,13 +25,9 @@ import {
   Total,
   Subtotal,
 } from './CartScreenStyles'
-import { addToCart, removeFromCart, updateCart } from 'actions/cartActions'
+import { removeFromCart } from 'actions/cartActions'
 
 const CartScreen = () => {
-  const [qty, setQty] = useState('')
-  const [color, setColor] = useState('')
-  const [size, setSize] = useState('')
-
   const navigate = useNavigate()
 
   const dispatch = useDispatch()
@@ -77,11 +72,7 @@ const CartScreen = () => {
                           >
                             <FormControl>
                               <InputLabel>Qty</InputLabel>
-                              <Select
-                                value={item.qty}
-                                label="qty"
-                                onChange={(e) => setQty(e.target.value)}
-                              >
+                              <Select value={item.qty} label="qty">
                                 {[...Array(item.countInStock).keys()].map(
                                   (x) => (
                                     <MenuItem key={x + 1} value={x + 1}>
@@ -98,7 +89,6 @@ const CartScreen = () => {
                                 id="color"
                                 value={item.color}
                                 label="ColorWay"
-                                onChange={(e) => setColor(e.target.value)}
                               >
                                 {item.colorWay.map((x) => (
                                   <MenuItem key={x} value={x}>
@@ -114,7 +104,6 @@ const CartScreen = () => {
                                 id="size"
                                 value={item.size}
                                 label="Size"
-                                onChange={(e) => setSize(e.target.value)}
                               >
                                 {item.sizes.map((x) => (
                                   <MenuItem key={x} value={x}>
