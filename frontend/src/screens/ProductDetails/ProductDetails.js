@@ -27,6 +27,7 @@ import {
 } from '@mui/material'
 
 import { listProductDetails } from 'actions/productActions'
+import { addToCart } from 'actions/cartActions'
 
 const ProductDetail = ({ match }) => {
   const params = useParams()
@@ -46,8 +47,9 @@ const ProductDetail = ({ match }) => {
     dispatch(listProductDetails(params.id))
   }, [params, dispatch])
 
-  const addToCart = () => {
-    navigate(`/cart/${params.id}?qty=${qty}?colorWay=${color}?size=${size}`)
+  const add = () => {
+    dispatch(addToCart(params.id, qty, size, color))
+    navigate('/cart')
   }
 
   return (
@@ -71,7 +73,7 @@ const ProductDetail = ({ match }) => {
           <Body>{product.description}</Body>
         </Grid>
         <Grid item xs={4} md={2}>
-          <form onSubmit={addToCart}>
+          <form onSubmit={add}>
             <TableContainer>
               <Tab>
                 <TableBody sx={{ p: 0 }}>

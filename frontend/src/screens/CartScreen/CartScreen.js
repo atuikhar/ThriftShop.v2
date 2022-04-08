@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate, useParams, useLocation } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import {
   Button,
@@ -26,31 +25,16 @@ import {
   Total,
   Subtotal,
 } from './CartScreenStyles'
-import { addToCart, removeFromCart } from 'actions/cartActions'
+import { removeFromCart } from 'actions/cartActions'
 
 const CartScreen = () => {
-  const params = useParams()
-  const location = useLocation()
   const navigate = useNavigate()
-
-  const productId = params.id
-
-  const qty = location.search ? Number(location.search.split('=')[1][0]) : 1
-
-  const size = location.search
-    ? location.search.split('=')[2].split('?')[0]
-    : 30
-
-  const color = location.search ? location.search.split('=')[3] : 30
 
   const dispatch = useDispatch()
 
   const cart = useSelector((state) => state.cart)
 
   const { cartItems } = cart
-  useEffect(() => {
-    dispatch(addToCart(productId, qty, color, size))
-  }, [dispatch, productId, qty, color, size])
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id))
@@ -88,15 +72,7 @@ const CartScreen = () => {
                           >
                             <FormControl>
                               <InputLabel>Qty</InputLabel>
-                              <Select
-                                value={item.qty}
-                                label="qty"
-                                onChange={(e) =>
-                                  dispatch(
-                                    addToCart(item.product, e.target.value)
-                                  )
-                                }
-                              >
+                              <Select value={item.qty} label="qty">
                                 {[...Array(item.countInStock).keys()].map(
                                   (x) => (
                                     <MenuItem key={x + 1} value={x + 1}>
@@ -113,11 +89,6 @@ const CartScreen = () => {
                                 id="color"
                                 value={item.color}
                                 label="ColorWay"
-                                onChange={(e) =>
-                                  dispatch(
-                                    addToCart(item.color, e.target.value)
-                                  )
-                                }
                               >
                                 {item.colorWay.map((x) => (
                                   <MenuItem key={x} value={x}>
@@ -133,9 +104,6 @@ const CartScreen = () => {
                                 id="size"
                                 value={item.size}
                                 label="Size"
-                                onChange={(e) =>
-                                  dispatch(addToCart(item.size, e.target.value))
-                                }
                               >
                                 {item.sizes.map((x) => (
                                   <MenuItem key={x} value={x}>
