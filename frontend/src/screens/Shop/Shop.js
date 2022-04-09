@@ -3,17 +3,16 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Product from 'components/Product/Product'
 import { Wrapper, WrapperGrid } from './ShopStyles'
-import { listProducts } from 'actions/productActions'
+
+import { productsSelector, fetchProducts } from '../../redux/slices/product'
 
 const Shop = () => {
   const dispatch = useDispatch()
 
-  const productList = useSelector((state) => state.productList)
-
-  const { loading, error, products } = productList
+  const { products, loading, hasErrors } = useSelector(productsSelector)
 
   useEffect(() => {
-    dispatch(listProducts())
+    dispatch(fetchProducts())
   }, [dispatch])
 
   return (
