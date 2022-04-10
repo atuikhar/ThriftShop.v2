@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Rating } from 'components/Rating/Rating'
@@ -26,7 +26,8 @@ import {
   InputLabel,
 } from '@mui/material'
 
-import { listProductDetails } from 'actions/productActions'
+import { productSelector, fetchProduct } from '../../redux/slices/productById'
+
 import { addToCart } from 'actions/cartActions'
 
 const ProductDetail = ({ match }) => {
@@ -39,12 +40,10 @@ const ProductDetail = ({ match }) => {
 
   const dispatch = useDispatch()
 
-  const productDetails = useSelector((state) => state.productDetails)
+  const { product, loading, hasErrors } = useSelector(productSelector)
 
-  const { loading, error, product } = productDetails
-
-  useEffect(() => {
-    dispatch(listProductDetails(params.id))
+  useLayoutEffect(() => {
+    dispatch(fetchProduct(params.id))
   }, [params, dispatch])
 
   const add = () => {
@@ -56,7 +55,7 @@ const ProductDetail = ({ match }) => {
     <Wrapper>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <CardImage src={product.image} alt={product.name} />
+          <CardImage src={product?.image} alt={product.name} />
         </Grid>
         <Grid item xs={8} md={4}>
           <Button variant="contained">
