@@ -21,27 +21,6 @@ Please be familiar with
 - [React.js](https://reactjs.org/) + hooks
 - [Material-UI](https://material-ui.com/components/paper/)
 
-## GIT RULES
-
-- Merging:
-
-  - Please always take a pull from main to keep the branch up-to-date with
-    the base branch (usually main(master)).
-
-    ```
-
-    ```
-
-- Try to commit in reference to the module and the story.
-
-  - `[MODULE][CLICKUP-TICKET-ID]: Comment`
-    And then close ClickUp ticket from the portal once code is merged
-
-- Don't commit directly to main(master)/staging/develop branches.
-
-- Don't merge your branch with master/staging/develop branches
-  You can submit a pull request and it needs to be reviewed by your supervisor / team lead
-
 ## CROSS BROWSER COMPATIBILITY
 
 Cross browser refers to the ability for the TurtlePic platform to support all the web browsers.
