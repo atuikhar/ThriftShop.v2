@@ -2,9 +2,9 @@
 
 ## WELCOME
 
-<p style='color:DarkOrange'>
-Welcome on board - we are pleased to have you!
-</p>
+<h1 style='color:DarkOrange'>
+Welcome
+</h1>
 
 #### `yarn install && yarn start`
 
