@@ -1,4 +1,4 @@
-# ThriftShop
+# ThriftShop(Online Shopping Site)
 
 ## WELCOME
 
