@@ -15,4 +15,4 @@ You will also see any lint errors in the console.
 - [NodeJs] (https://nodejs.org/en/) LTS
 - [Express](https://expressjs.com/)
 - [React.js](https://reactjs.org/) + hooks
-- [Material-UI](https://material-ui.com/components/paper/)
+- [Material-UI](https://mui.com/)
