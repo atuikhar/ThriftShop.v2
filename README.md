@@ -12,7 +12,7 @@ You will also see any lint errors in the console.
 
 ## STACK
 
-- [NodeJs] (https://nodejs.org/en/) LTS
-- [Express](https://expressjs.com/)
-- [React.js](https://reactjs.org/) + hooks
-- [Material-UI](https://mui.com/)
+- [NodeJs](https://nodejs.org) LTS
+- [Express](https://expressjs.com)
+- [React.js](https://reactjs.org) + hooks
+- [Material-UI](https://mui.com)
