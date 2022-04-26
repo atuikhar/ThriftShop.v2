@@ -2,17 +2,13 @@
 
 ## WELCOME
 
-#### `yarn install && yarn start`
+#### `yarn install && yarn dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000] to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ## STACK
 
 - [NodeJs](https://nodejs.org) LTS
 - [Express](https://expressjs.com)
-- [React.js](https://reactjs.org) + hooks
-- [Material-UI](https://mui.com)
+- [React.js](https://reactjs.org)
